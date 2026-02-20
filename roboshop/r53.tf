@@ -1,0 +1,11 @@
+resource "aws_route53_record" "www" {
+    count=10
+  zone_id = var.zone_id
+   # interpolation
+   name    = "${var.instances[count.index]}.${var.domain_name}"
+#  name    = "${format("mongodb-%02d" , count.index+1)}.${var.domain_name}"
+
+  type    = "A"
+  ttl     = 1
+  records = var.instances[count.index] == "frontend" ? [aws_instance.roboshop[count.index].public_ip] : [aws_instance.roboshop[count.index].private_ip]
+}
