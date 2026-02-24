@@ -6,7 +6,7 @@ resource "aws_instance" "roboshop" {
 
   tags = {
      Name = var.instances[count.index] 
-    # Name = format("mongodb-%02d",count.index+1)
+    Name = format("mongodb-%02d",count.index+1)
     Project = "roboshop"
   }
 }

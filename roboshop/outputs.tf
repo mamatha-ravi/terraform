@@ -3,10 +3,10 @@
 #   description = "The information of the main server instance."
 # }
 
-output "fruits_names" {
-    value = var.fruits_string
-}
+# output "fruits_names" {
+#     value = var.fruits_string
+# }
 
-output "fruits_set" {
-    value = var.fruits_set
-}
+# output "fruits_set" {
+#     value = var.fruits_set
+# }
